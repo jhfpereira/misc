@@ -129,7 +129,7 @@
                 });
             
             
-                // setting up Settings-Popup; bindig handlers to elements
+                // setting up Settings-Popup; binding handlers to their elements
                 settingsButton      = document.getElementById('settings_button');
                 blackoutNode        = document.getElementById('blackout');
                 xFuncInputNode      = document.getElementById('x_func_text');
@@ -140,7 +140,10 @@
                 yInsertFuncNode     = document.getElementById('y_func_insert_button');
                 
                 settingsButton.addEventListener('click', toggleSettings);
-                blackoutNode.addEventListener('click', function(){ if(listIsOpen) toggleExamplesListFor(funcExamplesListOpendFor, null); });
+                blackoutNode.addEventListener('click', function(){
+                    if(listIsOpen) toggleExamplesListFor(funcExamplesListOpendFor, null);
+                });
+                
                 xFuncInputNode.addEventListener('keyup', function() {
                     setInputBorderIndicatorColor(funcInterpreter('x', this.value), this);
                 });
@@ -259,7 +262,10 @@
             
             
             function toggleExamplesListFor(funcName, e) {
-                if(!listIsOpen || funcExamplesListOpendFor != funcName || funcListConNode.style.display == 'none' || funcListConNode.style.display == '') {
+                if(     !listIsOpen
+                    ||  funcExamplesListOpendFor != funcName
+                    ||  funcListConNode.style.display == 'none'
+                    ||  funcListConNode.style.display == '' ) {
                     var mouseXPos = e.clientX,
                         mouseYPos = e.clientY;
                     
