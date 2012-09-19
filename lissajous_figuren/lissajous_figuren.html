@@ -58,7 +58,8 @@
             var prevXPos = -1,
                 prevYPos = -1;
             
-            var hslVal = 0;
+            var hslVal = 0,
+                pinkMode = false;
             
             var funcExamplesListOpendFor = '',
                 listIsOpen = false;          
@@ -128,7 +129,22 @@
                         }
                 });
             
-            
+                
+                // pink-mode
+                document.getElementsByTagName('body')[0].addEventListener('keyup', function(e) {
+                    var keyCode = e.which || e.keyCode;
+                    
+                    console.log(keyCode);
+                    
+                    if(keyCode == 80) {
+                        pinkMode = !pinkMode;
+                        stop();
+                        start();
+                    }
+                    
+                });
+                
+                
                 // setting up Settings-Popup; binding handlers to their elements
                 settingsButton      = document.getElementById('settings_button');
                 blackoutNode        = document.getElementById('blackout');
@@ -371,7 +387,7 @@
                 
                 if(prevXPos > 0 && prevYPos > 0) {
                     canvasCtx.beginPath();
-                    canvasCtx.strokeStyle = 'hsl('+ hslVal +', 80%, 60%)';
+                    canvasCtx.strokeStyle = 'hsl('+ hslVal +', 80%, 60%)'; 
                     canvasCtx.moveTo(prevXPos, prevYPos);
                     canvasCtx.lineTo(xPos, yPos);
                     canvasCtx.closePath();
@@ -380,7 +396,7 @@
                     prevXPos = xPos;
                     prevYPos = yPos;
                     
-                    hslVal = (hslVal + 1) % 360;
+                    hslVal = (pinkMode) ? 330: (hslVal + 1) % 360;
                 
                     zVal = (zVal + 0.01);
                     if(zVal >= (Math.PI/2)) {
