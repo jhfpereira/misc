@@ -134,8 +134,6 @@
                 document.getElementsByTagName('html')[0].addEventListener('keyup', function(e) {
                     var keyCode = e.which || e.keyCode;
                     
-                    console.log(keyCode);
-                    
                     if(keyCode == 80) {
                         pinkMode = !pinkMode;
                         stop();
@@ -197,7 +195,7 @@
                 // fill exampleslist
                 var listExamplesNode = document.getElementById('func_examples_list');
                 for(var i=0; i < funcExamples.length; i++) {
-                    var tdElem = document.createElement('ul');
+                    var tdElem = document.createElement('li');
                     tdElem.setAttribute('class', 'func_examples_list_entry');
                     tdElem.addEventListener('click', function() { insertFuncFromList(this);} );
                     tdElem.innerHTML = funcExamples[i];
@@ -679,24 +677,24 @@
             z-index:        1040;
         }
         
-        li#func_examples_list {
+        ul#func_examples_list {
             list-style-type:none;
             margin:         0;
             padding:        0;
         }
         
-        li#func_examples_list ul.func_examples_list_entry {
+        ul#func_examples_list li.func_examples_list_entry {
             border-top:     1px solid #a3a3a3;
             margin:         0;
             padding:        0;
             padding:        5px 20px;
         }
         
-        li#func_examples_list ul.func_examples_list_entry:first-child {
+        ul#func_examples_list li.func_examples_list_entry:first-child {
             border:         0;
         }
         
-        li#func_examples_list ul.func_examples_list_entry:hover {
+        ul#func_examples_list li.func_examples_list_entry:hover {
             background:     #a3a3a3;
             color:          #fff;
             cursor:         pointer;
@@ -795,9 +793,9 @@
             </table>
         </div>
        <div id="func_examples_list_container">
-            <li id="func_examples_list">
+            <ul id="func_examples_list">
                 
-            </li>
+            </ul>
         </div>
     </div>
 </body>
