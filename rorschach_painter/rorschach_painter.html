@@ -122,12 +122,18 @@
                             canvasOverlayCtx.save();
                             canvasOverlayCtx.beginPath();
                             canvasOverlayCtx.strokeStyle = '2px #fff';
-                            canvasOverlayCtx.arc(lastMousePosResize.x, lastMousePosResize.y, lastBrushSizeTested - 2, 0, 2*Math.PI, false);
+                            canvasOverlayCtx.arc(lastMousePosResize.x, lastMousePosResize.y,
+                                                 lastBrushSizeTested - 2,
+                                                 0, 2*Math.PI,
+                                                 false);
                             canvasOverlayCtx.closePath();
                             canvasOverlayCtx.stroke();
                             canvasOverlayCtx.beginPath();
                             canvasOverlayCtx.strokeStyle = '1px #555';
-                            canvasOverlayCtx.arc(lastMousePosResize.x, lastMousePosResize.y, lastBrushSizeTested, 0, 2*Math.PI, false);
+                            canvasOverlayCtx.arc(lastMousePosResize.x, lastMousePosResize.y,
+                                                 lastBrushSizeTested,
+                                                 0, 2*Math.PI,
+                                                 false);
                             canvasOverlayCtx.closePath();
                             canvasOverlayCtx.stroke();
                             canvasOverlayCtx.restore();
@@ -354,7 +360,10 @@
     <div id="positionator">
         <div id="heading">
             <p id="project_name">Rorschach-Painter</p>
-            <div id="clearPositionator"><input type="button" id="saveButton" value="save" /><input type="button" id="clearButton" value="clear" /></div>
+            <div id="clearPositionator">
+                <input type="button" id="saveButton" value="save" />
+                <input type="button" id="clearButton" value="clear" />
+            </div>
             <div class="clear_fix"></div>
         </div>
         <div id="main_container">
