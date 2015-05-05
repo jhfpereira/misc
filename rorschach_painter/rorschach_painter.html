@@ -285,7 +285,7 @@
             height:         100%;
         }
         
-        #heading p#project_name {
+        #heading p.project_name {
             color:          #a3a3a3;
             font-size:      3em;
             font-weight:    normal;
@@ -295,31 +295,34 @@
             padding:        0;
             text-align:     left;
         }
+        
+        #heading p.hint_text {
+            padding:        0;
+            margin:         0;
+        }
 
         #heading div#clearPositionator {
             text-align:     right;
             height:         31px;
+            margin-bottom:  5px;
         }
         
-        #heading div#clearPositionator input#clearButton,
-        #heading div#clearPositionator input#saveButton {
+        #heading div#clearPositionator input {
             display:        none;
-            padding:        5px;
             margin:         1px 0;
             width:          70px;
-            line-height:    31px;
             border:         0;
+            height:         28px;
         }
 
         #heading div#clearPositionator input#saveButton.canvasClearable {
             display:        inline;
             background:     hsl(114, 60%, 60%);
             color:          #fff;
-            margin-right:   10px;
+            margin-right:   5px;
         }
         
-        #heading div#clearPositionator input#clearButton:hover,
-        #heading div#clearPositionator input#saveButton:hover {
+        #heading div#clearPositionator input:hover {
             cursor:         pointer;
         }
 
@@ -359,7 +362,8 @@
 <body>
     <div id="positionator">
         <div id="heading">
-            <p id="project_name">Rorschach-Painter</p>
+            <p class="project_name">Rorschach-Painter</p>
+            <p class="hint_text">Press and hold the Ctrl-Button to resize the brush</p>
             <div id="clearPositionator">
                 <input type="button" id="saveButton" value="save" />
                 <input type="button" id="clearButton" value="clear" />
